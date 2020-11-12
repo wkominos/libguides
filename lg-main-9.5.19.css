@@ -705,6 +705,8 @@ a.libhours:active {
     padding: 0;
 }
 
+
+
 .lg-btn {
     float: left;
 }
@@ -792,6 +794,19 @@ a.libhours:active {
     background-color: #dddddd;
     color: #0060b8;
     font-weight: bold;
+}
+
+/*subnav item margin fixes*/
+ul.s-lg-subtab-ul.nav.nav-pills.nav-stacked {
+    padding-top: 0px !important;
+    margin-bottom: 0px !important;
+}
+
+ul.s-lg-subtab-ul.dropdown-menu {
+    font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+    font-size: 14px;
+    padding-top: 0px;
+    padding-bottom: 0px;
 }
 
 /*button for mobile menu*/
@@ -899,6 +914,7 @@ lg-guide-header-info h1, .s-lib-header h1 {
 
 .s-lib-jqtabs div.tab-content {
     padding: 0;
+ border: 0;
 }
 .tab-content {
     border: 0;
