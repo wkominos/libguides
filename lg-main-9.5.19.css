@@ -119,6 +119,10 @@ button,
     background: var(--ltblue);
 }
 
+.s-lib-cmd-bar {
+    font-size: 12px;
+}
+
 /* Header */
 
 .header {
