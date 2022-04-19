@@ -1,36 +1,151 @@
 <!-- LGv2 BEGIN Custom footer-->
 <footer class="achieve-2 footer site-footer">
-         <div class="container">
-            <div class="row">
-               <div class="span12">
-                  <h3 class="center" style="margin-left: auto;margin-right: auto;text-align: center;">UTC Library</h3>
-               </div>
-            </div>
-            <div class="row">
-               <div class="span12">
-                  <p class="achieve pushup center">UTC Library
-                      | 
-                     Dept 6456
-                      | 
-                     600 Douglas Street
-                      | 
-                     Chattanooga, TN 37403
-                      | 
-                     (423) 425-4501<abbr title="Phone"> p</abbr>
-                      | 
-                     <a href="https://utc.edu/library/about/contact.php">Contact Us</a></p>
-               </div>
-            </div>
-         </div><div class="container">
+   <div class="container">
+      <div class="row">
+         <div class="span12">
+            <h3 class="center" style="margin-left: auto;margin-right: auto;text-align: center;">UTC Library</h3>
+         </div>
+      </div>
+      <div class="row">
+         <div class="span12">
+            <p class="achieve pushup center">UTC Library
+                | 
+               Dept 6456
+                | 
+               600 Douglas Street
+                | 
+               Chattanooga, TN 37403
+                | 
+               (423) 425-4501<abbr title="Phone"> p</abbr>
+                | 
+               <a href="https://www.utc.edu/library/about/contact">Contact Us</a></p>
+         </div>
+      </div>
+   </div><div class="container">
 <div class="row">
 <div class="span12">
-<p class="fineprint"><a id="legal-questions" href="https://www.utc.edu/about/contact/">Questions?</a> <span id="directedit">©</span> 2012-2017 The University of Tennessee at Chattanooga. All rights reserved. <a id="legal-eeo" href="https://www.utc.edu/university-relations/editorial-guidelines/eeo.php">EEO Statement</a>. <a id="legal-privacy" href="https://www.utc.edu/about/privacy.php">Privacy Statement</a>.</p>
+<p style="text-align:center;"><a href="https://www.utc.edu/about/contact" id="legal-questions">Questions?</a> © 2012-2021 University of Tennessee at Chattanooga. All rights reserved.</p>
+<p style="text-align:center;"><a href="https://www.utc.edu/enrollment-management-and-student-affairs/title-ix#title-ix-statement" id="legal-title-ix">Title IX Statement</a> | <a href="https://www.utc.edu/communications-and-marketing/eeo-statement" id="legal-eeo">EEO Statement</a> | <a href="https://www.utc.edu/about/privacy" id="legal-privacy">Privacy Statement</a> | <a href="https://www.utc.edu/academic-affairs/accessible-information-materials-and-technology-program">Accessibility</a> | <a href="https://utcwebdev.atlassian.net/servicedesk/customer/portals">Web Requests</a></p>
+<p style="text-align:center;">A comprehensive, community-engaged campus of the <a href="http://www.tennessee.edu/" id="legal-ut">University of Tennessee System</a> and partner in the <a href="https://www.tntransferpathway.org">Tennessee Transfer Pathway</a>.</p></div>
+
+<!--
+<p class="fineprint"><a id="legal-questions" href="https://www.utc.edu/about/contact/">Questions?</a> <span id="directedit">©</span> 2012-2017 The University of Tennessee at Chattanooga. All rights reserved. <a id="legal-eeo" href="https://www.utc.edu/university-relations/editorial-guidelines/eeo.php">EEO Statement</a>. <a id="legal-privacy" href="https://www.utc.edu/about/privacy.php">Privacy Statement</a>.</p>
 <p class="fineprint">A comprehensive, community-engaged campus of the <a id="legal-ut" href="https://www.tennessee.edu/" target="_blank">University of Tennessee System</a> <a href="https://www.tennessee.edu/" target="_blank"><img src="https://libapps.s3.amazonaws.com/accounts/53652/images/ut-icon-bw.png" alt="University of Tennessee UT logo" width="35" height="20" /></a></p>
 <p class="fineprint">and partner in the <a id="global-footer-nav1-transfers" href="https://www.tntransferpathway.org/" target="_blank"><img style="margin-top: -10px;" src="https://libapps.s3.amazonaws.com/accounts/53652/images/tn-transfer-pathway-logo.png" alt="Tennessee Transfer Pathway logo" width="172" height="34" /></a></p>
+-->
 </div>
 </div>
 </div>
-      </footer>
+</footer>
 </div>
 <a id="libraryh3lp" class="lib-c-btn lib-c-btn--burgandy lib-c-btn--rounded-corners lib-c-btn--floating-bottom-right lib-c-btn--floating-bottom-right-rectangle lib-c-btn--large lib-c-btn--wide-side-pad" href="https://www.utc.edu/library/help" target="_blank"><i class="fa fa-comment lib-c-btn__icon-before"></i>Ask a Librarian</a></div>
 <!-- LGv2.01 END Custom footer-->
+
+<script>
+/****B/C Safari won't play nice with the Apply Now transitions, we're going to add the browser as a body class****/
+/****This only works in the footer of LibGuides because their custom JS section only adds to the head****/
+(($) => {
+var BrowserDetect = {
+  init: function () {
+      this.browser = this.searchString(this.dataBrowser) || "Other";
+      this.version = this.searchVersion(navigator.userAgent) || this.searchVersion(navigator.appVersion) || "Unknown";
+  },
+  searchString: function (data) {
+      for (var i = 0; i < data.length; i++) {
+          var dataString = data[i].string;
+          this.versionSearchString = data[i].subString;
+          if (dataString.indexOf(data[i].subString) !== -1) {
+              return data[i].identity;
+          }
+      }
+  },
+  searchVersion: function (dataString) {
+      var index = dataString.indexOf(this.versionSearchString);
+      if (index === -1) {
+          return;
+      }
+      var rv = dataString.indexOf("rv:");
+      if (this.versionSearchString === "Trident" && rv !== -1) {
+          return parseFloat(dataString.substring(rv + 3));
+      } else {
+          return parseFloat(dataString.substring(index + this.versionSearchString.length + 1));
+      }
+  },
+  dataBrowser: [{
+      string: navigator.userAgent,
+      subString: "Edge",
+      identity: "MS Edge"
+  }, {
+      string: navigator.userAgent,
+      subString: "MSIE",
+      identity: "Explorer"
+  }, {
+      string: navigator.userAgent,
+      subString: "Trident",
+      identity: "Explorer"
+  }, {
+      string: navigator.userAgent,
+      subString: "Firefox",
+      identity: "Firefox"
+  }, {
+      string: navigator.userAgent,
+      subString: "Opera",
+      identity: "Opera"
+  }, {
+      string: navigator.userAgent,
+      subString: "OPR",
+      identity: "OPR"
+  }, {
+      string: navigator.userAgent,
+      subString: "Netscape",
+      identity: "Netscape"
+  }, {
+      string: navigator.userAgent,
+      subString: "Chrome",
+      identity: "Chrome"
+  }, {
+      string: navigator.userAgent,
+      subString: "Safari",
+      identity: "Safari"
+  }]
+};
+BrowserDetect.init();
+var bv = BrowserDetect.browser;
+if (bv == "Chrome") {
+  (".ribbon").addClass("chrome");
+} else if (bv == "MS Edge") {
+  $(".ribbon").addClass("edge");
+} else if (bv == "Explorer") {
+  $(".ribbon").addClass("ie");
+} else if (bv == "Firefox") {
+  $(".ribbon").addClass("firefox");
+} else if (bv == "Safari") {
+  $(".ribbon").addClass("safari");
+} else if (bv == "Netscape") {
+  $(".ribbon").addClass("opera");
+} else {
+  $(".ribbon").addClass("browser-unknown");
+}
+})($);
+
+//mobile hamburger click dropdown
+const bars = document.querySelector(".bars");
+const primaryNavigationMenu = document.querySelector(".nav-primary");
+bars.onclick = function(){
+primaryNavigationMenu.classList.toggle("mobile-hidden");
+}
+
+//sticky header
+
+const header = document.querySelector(".header");
+const headerOffset = header.offsetTop;
+
+window.onscroll = function(){
+if (window.pageYOffset > headerOffset) {
+header.classList.add("sticky");
+}else {
+header.classList.remove("sticky");
+}
+}
+
+</script>
