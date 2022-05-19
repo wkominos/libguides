@@ -1727,26 +1727,26 @@ if (item.title != "No emergencies at this time"){
 });
 /* END alert message */
 
-    $("iframe").wrap("<div class='iframe normal'/>");
-    $("table").wrap("<div style='overflow-x:auto;'>");
-    var newItem=document.createElement("LI");
-    var a=document.createElement('a');
-    var linkText=document.createTextNode("UTC");
-    a.appendChild(linkText);
-    a.title="UTC";
-    a.href="http://utc.edu";
-    newItem.appendChild(a);
-    var list=document.getElementById("s-lib-bc-list");
-    list.insertBefore(newItem, list.childNodes[0]);
-    var newItem2=document.createElement("LI");
-    var a2=document.createElement('a');
-    var linkText2=document.createTextNode("Research Help");
-    a2.appendChild(linkText2);
-    a.title="Research Help";
-    a2.href="http://utc.edu/library/help";
-    newItem2.appendChild(a2);
-    var list2=document.getElementById("s-lib-bc-list");
-    list2.insertBefore(newItem2, list2.childNodes[4]);
+$("iframe").wrap("<div class='iframe normal'/>");
+$("table").wrap("<div style='overflow-x:auto;'>");
+var newItem=document.createElement("LI");
+var a=document.createElement('a');
+var linkText=document.createTextNode("UTC");
+a.appendChild(linkText);
+a.title="UTC";
+a.href="http://utc.edu";
+newItem.appendChild(a);
+var list=document.getElementById("s-lib-bc-list");
+list.insertBefore(newItem, list.childNodes[0]);
+var newItem2=document.createElement("LI");
+var a2=document.createElement('a');
+var linkText2=document.createTextNode("Help");
+a2.appendChild(linkText2);
+a.title="Research Help";
+a2.href="http://utc.edu/library/help";
+newItem2.appendChild(a2);
+var list2=document.getElementById("s-lib-bc-list");
+list2.insertBefore(newItem2, list2.childNodes[2]);
 
 //remove li from links with button html
 jQuery('ul.s-lg-link-list li div span a .btn-lnk').each(function() {
