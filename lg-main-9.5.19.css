@@ -325,7 +325,7 @@ li.ribbon-container {
     font-family: "Roboto", sans-serif;
 }
 
-.nav-primary .menu-item a:after {
+.nav-primary .menu-item a::after {
     content: "";
     background: rgba(253, 183, 54, 0.7);
     transform: scaleX(0);
@@ -358,7 +358,7 @@ li.ribbon-container {
 
 .dropdown-item {
     display: flex;
-    justify-content: center;
+    justify-content: left;
     list-style: none;
     border-bottom: 1px solid var(--ltgray);
     height: auto;
@@ -537,7 +537,7 @@ li.ribbon-container {
         font-family: "Roboto", sans-serif;
     }
 
-    .nav-primary .menu-item a:after {
+    .nav-primary .menu-item a::after {
         content: "";
         background: rgba(253, 183, 54, 0.7);
         transform: scaleX(0);
