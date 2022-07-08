@@ -260,6 +260,10 @@ button,
     z-index: 1;
 }
 
+.row-fluid .menu-item a {
+	font-size: 18px
+}
+
 .ribbon-wrapper {
     width: 60px;
     position: relative;
@@ -1326,7 +1330,7 @@ ul li.s-lg-sortable-item {
 /* fix ul */
 ul.s-lg-link-list li a, ul.s-lg-rss-list li a {
     font-weight: bold;
-    font-size: 16px;
+    font-size: 18px;
     line-height: 1.25;
 }
 
