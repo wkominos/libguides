@@ -1539,18 +1539,18 @@ a.text-utc-blue-500:hover {
     text-align: right;
 }
 
-  ol, ul {
+.site-footer.site-footer ul {
     margin: 0;
     padding: 0;
-  }
-  ol, ul {
+}
+.site-footer ol, .site-footer ul {
     list-style: none;
   }
-  fieldset, ol, ul {
+.site-footer fieldset, .site-footer ol, .site-footer ul {
     margin: 0;
     padding: 0;
   }
-  ol, ul {
+.site-footer ol, .site-footer ul {
     overflow-wrap: break-word;
   }
 
